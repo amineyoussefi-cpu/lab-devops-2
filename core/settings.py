@@ -27,6 +27,24 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['.vercel.app', 'localhost', '127.0.0.1', '*']
 
+import sentry_sdk
+
+from sentry_sdk.integrations.django import DjangoIntegration
+
+ 
+
+sentry_sdk.init(
+
+    dsn="votre-dsn",  # Remplacez par le DSN copié depuis Sentry
+
+    integrations=[DjangoIntegration()],
+
+    traces_sample_rate=1.0,  # Ajustez le taux de collecte des traces
+
+    send_default_pii=True
+
+)
+
 # Application definition
 
 INSTALLED_APPS = ['django.contrib.admin',
