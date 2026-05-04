@@ -1,5 +1,6 @@
 # Create your views here.
 
+from django.http import JsonResponse
 from django.shortcuts import render
 
  
@@ -31,6 +32,9 @@ def trigger_error(request):
         sentry_sdk.capture_exception(e)
 
        
+
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+        return JsonResponse({'error': True})
 
     # On renvoie l'utilisateur sur la même page avec un message discret
 
