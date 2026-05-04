@@ -30,7 +30,7 @@ ALLOWED_HOSTS = ['.vercel.app', 'localhost', '127.0.0.1', '*']
 import sentry_sdk
 
 sentry_sdk.init(
-    dsn="https://cc7bf5489efcff14482941687a268744@o4511331136831488.ingest.de.sentry.io/4511331160555600",
+    dsn="https://4c10bddef9a43957ed255dcd344accd2@o4511331136831488.ingest.de.sentry.io/4511331878371408",
     # Add data like request headers and IP for users,
     # see https://docs.sentry.io/platforms/python/data-management/data-collected/ for more info
     send_default_pii=True,
