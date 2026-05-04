@@ -27,6 +27,16 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['.vercel.app', 'localhost', '127.0.0.1', '*']
 
+import sentry_sdk
+
+sentry_sdk.init(
+    dsn="https://cc7bf5489efcff14482941687a268744@o4511331136831488.ingest.de.sentry.io/4511331160555600",
+    # Add data like request headers and IP for users,
+    # see https://docs.sentry.io/platforms/python/data-management/data-collected/ for more info
+    send_default_pii=True,
+)
+
+
 # Application definition
 
 INSTALLED_APPS = ['django.contrib.admin',
